@@ -22,7 +22,7 @@ function CreatePost() {
         setGeneratingImg(true);
 
         const response = await axios.post(
-          "http://localhost:8080/api/v1/dalle",
+          "https://neumorphism-dall-e.onrender.com/api/v1/dalle",
           { prompt: form.prompt }
         );
 
@@ -49,7 +49,7 @@ function CreatePost() {
       setLoading(true);
 
       try {
-        await axios.post("http://localhost:8080/api/v1/posts", form);
+        await axios.post("https://neumorphism-dall-e.onrender.com/api/v1/posts", form);
         navigate("/");
       } catch (error) {
         alert(error);

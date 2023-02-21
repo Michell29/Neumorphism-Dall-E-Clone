@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import axios from "axios";
 
 import { Card, FormField, Loader } from "../components";
 
@@ -29,9 +28,19 @@ function Home() {
       setLoading(true);
 
       try {
-        const response = await axios.get("http://localhost:8080/api/v1/posts");
-        if (response.statusText === "OK") {
-          setAllPosts(response.data.data.reverse());
+        const response = await fetch(
+          "https://neumorphism-dall-e.onrender.com/api/v1/posts",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        if (response.ok) {
+          const result = await response.json();
+
+          setAllPosts(result.data.reverse());
         }
       } catch (error) {
         alert("somethings failed");
