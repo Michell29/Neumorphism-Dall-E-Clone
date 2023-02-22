@@ -38,7 +38,7 @@ function CreatePost() {
         setGeneratingImg(false);
       }
     } else {
-      alert("Please enter a prompt");
+      alert("Introduce una Entrada");
     }
   };
 
@@ -57,7 +57,7 @@ function CreatePost() {
         setLoading(false);
       }
     } else {
-      alert("Please enter a prompt and generate an image");
+      alert("Por favor, introduce y genera la imagen");
     }
   };
 
@@ -73,18 +73,20 @@ function CreatePost() {
   return (
     <section className="max-w-7x1 mx-auto">
       <div>
-        <h1 className="font-extrabold text-gray-900 text-[32px]">
-          Create a beautiful images
+        <h1 className="font-extrabold text-gray-600 text-[32px]">
+          Crea tus imagenes y publicalas
         </h1>
-        <p className="mt-2 text-gray-400 text-[14px] max-w-[500px]">
-          Create imaginative and visually stunning images trough DALL-E AI and
-          share them with the community
+        <p className="mt-2 text-gray-500 text-[14px] max-w-[800px]">
+          Imagina como quieres que se vea tu imagen y escribela detalladamente en la entrada o prompt, ten en cuenta que debe ser estricatmente en ingles.
+        </p>
+        <p className="mt-2 text-gray-500 text-[14px] max-w-[800px]">
+          Nota: Si no se te ocurre nada presiona el boton Sorprendeme para que genere un imagen por defecto.
         </p>
       </div>
       <form className="mt-16 max-w-3x1" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-5">
           <FormField
-            LabelName="Your name"
+            LabelName="Tú Nombre"
             type="text"
             name="name"
             placeholder="Jhon Doe"
@@ -93,7 +95,7 @@ function CreatePost() {
           />
 
           <FormField
-            LabelName="Prompt"
+            LabelName="Entrada (Prompt)"
             type="text"
             name="prompt"
             placeholder="A plush toy robot sitting against a yellow wall"
@@ -103,7 +105,7 @@ function CreatePost() {
             handleSurpriseMe={handleSurpriseMe}
           />
 
-          <div className="relative bg-gray-50 shadow-neumorphismlightinset text-sm rounded-lg w-64 p-3 h-64 flex justify-center items-center">
+          <div className="relative shadow-neumorphismlightinset text-sm rounded-lg w-64 p-3 h-64 flex justify-center items-center">
             {form.photo ? (
               <img src={form.photo} />
             ) : (
@@ -125,22 +127,21 @@ function CreatePost() {
           <button
             type="button"
             onClick={generateImage}
-            className="text-gray-200 bg-purple-400 shadow-neumorphismlight font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+            className="text-gray-500 shadow-neumorphismlightbutton bg-gradient-to-r from-[#a7baba] to-[#c6dddd] hover:shadow-neumorphismlightinset font-bold rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           >
-            {generatingImg ? "Generating..." : "Generate"}
+            {generatingImg ? "Generrando..." : "Generar"}
           </button>
         </div>
 
         <div className="mt-10">
-          <p className="mt-2 text-gray-400 text-[14px]">
-            Once you hace created the image you want, you can share it with
-            others in the community
+          <p className="mt-2 text-gray-500 text-[14px]">
+            Si te gusto la imagen creada, presiona Compartir para publicarla y asi poder descargarla.
           </p>
           <button
             type="submit"
-            className="mt-3 text-gray-200 bg-blue-400 shadow-neumorphismlight font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+            className="mt-3 shadow-neumorphismlightbutton bg-gradient-to-r from-[#a7baba] to-[#c6dddd] text-gray-500 hover:shadow-neumorphismlightinset font-bold rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           >
-            {loading ? "Sharing..." : "Share with the community"}
+            {loading ? "Compartiendo..." : "Compartir con la comunidad"}
           </button>
         </div>
       </form>

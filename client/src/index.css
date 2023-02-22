@@ -6,6 +6,14 @@
   font-family: "Inter", sans-serif;
 }
 
+body{
+  background-color: #b9cfcf;
+}
+
+input{
+  background-color: #b9cfcf;
+}
+
 @media screen and (min-width: 480px) {
   .card:nth-child(7n + 1) {
     grid-column: auto/span 2;

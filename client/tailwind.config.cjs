@@ -12,11 +12,13 @@ module.exports = {
       },
       boxShadow: {
         default:
-          '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+          '20px 20px 60px #98aaaa,-20px -20px 60px #daf4f4',
         neumorphismlightinset:
-          'inset 4px 4px 10px rgba(222,222,222,0.8),-0px -0px 20px #ffffff',
+          'inset 4px 4px 10px #98aaaa,inset -4px -4px 10px #daf4f4',
         neumorphismlight:
-          'inset 1px 1px 5px #fff, 9px 9px 20px rgba(222, 222, 222, 0.8),-0px -0px 20px #ffffff',
+          '4px 4px 10px #98aaaa,-4px -4px 10px #daf4f4',
+        neumorphismlightbutton:
+          '4px 4px 10px #9db0b0,-4px -4px 10px #d5eeee'
       }
     },
   },

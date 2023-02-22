@@ -21,13 +21,14 @@ function FormField({
           <button
             type="button"
             onClick={handleSurpriseMe}
-            className="font-bold tex-gray-200 bg-gray-400 text-sm py-1 shadow-neumorphismlight px-4 rounded-md text-gray-200"
+            className="font-bold bg-gradient-to-r from-[#a7baba] to-[#c6dddd] hover:shadow-neumorphismlightinset text-gray-500 text-sm py-1 shadow-neumorphismlightbutton px-4 rounded-md text-gray-200"
           >
-            Surprise Me
+            Sorprendeme
           </button>
         )}
       </div>
       <input
+        autoComplete="off"
         type={type}
         id={name}
         name={name}
@@ -35,7 +36,7 @@ function FormField({
         value={value}
         onChange={handleChange}
         required
-        className="shadow-neumorphismlightinset text-gray-400 text-sm rounded-xl placeholder:text-gray-400 outline-none block w-full p-3"
+        className="shadow-neumorphismlightinset px-5 text-gray-500 text-sm rounded-xl placeholder:text-gray-500 outline-none block w-full p-3"
       />
     </div>
   );
